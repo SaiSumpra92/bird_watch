@@ -1,0 +1,9 @@
+ebird:
+  api_key: 'your_ebird_api_key'
+
+aws:
+  s3_bucket: 'your-s3-bucket-name'
+  region: 'us-west-2'
+
+social_media:
+  twitter_api_key: 'your_twitter_api_key'
