@@ -16,8 +16,7 @@ This project aims to collect, process, and analyze global bird population data t
 
 - Apache Airflow: Workflow orchestration
 - Amazon S3: Data lake storage
-- AWS Glue: ETL jobs
-- Amazon Athena: SQL querying
+- AWS Lambda: ETL jobs
 - Jupyter Notebooks: Data analysis and visualization
 - Python: Programming language (Pandas, Matplotlib, Seaborn)
 - Git: Version control
@@ -36,7 +35,7 @@ This project aims to collect, process, and analyze global bird population data t
     - Processed data stored back in S3 in Parquet format
 
 4. **Data Analysis**:
-    - Amazon Athena queries processed data
+    - Jupyter Notebook
     - Results exported to S3 for visualization
 
 5. **Visualization**:

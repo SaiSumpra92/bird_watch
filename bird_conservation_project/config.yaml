@@ -1,5 +1,5 @@
 ebird:
-  api_key: 'your_ebird_api_key'
+  api_key: 'u42jmap317b8'
 
 aws:
   s3_bucket: 'your-s3-bucket-name'
