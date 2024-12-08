@@ -1,48 +1,58 @@
-# Bird Species Monitoring and Conservation Analysis
 
-## Project Overview
+# Welcome to your CDK Python project!
 
-This project aims to collect, process, and analyze global bird population data to provide insights for researchers, conservationists, and policymakers. By combining data from eBird and social media sources, we create a comprehensive view of bird populations, migration patterns, and public engagement with bird conservation efforts.
+This is a blank project for CDK development with Python.
 
-## Architecture
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
-1. **Data Collection**: Daily extraction of eBird data and social media mentions
-2. **Data Storage**: Amazon S3 for raw and processed data
-3. **Data Processing**: AWS Glue for ETL jobs
-4. **Data Querying**: Amazon Athena for SQL-based analysis
-5. **Visualization**: Jupyter Notebooks for creating insightful visualizations
+This project is set up like a standard Python project.  The initialization
+process also creates a virtualenv within this project, stored under the `.venv`
+directory.  To create the virtualenv it assumes that there is a `python3`
+(or `python` for Windows) executable in your path with access to the `venv`
+package. If for any reason the automatic creation of the virtualenv fails,
+you can create the virtualenv manually.
 
-## Technologies Used
+To manually create a virtualenv on MacOS and Linux:
 
-- Apache Airflow: Workflow orchestration
-- Amazon S3: Data lake storage
-- AWS Lambda: ETL jobs
-- Jupyter Notebooks: Data analysis and visualization
-- Python: Programming language (Pandas, Matplotlib, Seaborn)
-- Git: Version control
+```
+$ python3 -m venv .venv
+```
 
-## Data Pipeline
+After the init process completes and the virtualenv is created, you can use the following
+step to activate your virtualenv.
 
-1. **Data Ingestion**:
-    - Daily eBird data collection via API
-    - Social media data collection (Twitter API)
+```
+$ source .venv/bin/activate
+```
 
-2. **Data Storage**:
-    - Raw data stored in S3 buckets
+If you are a Windows platform, you would activate the virtualenv like this:
 
-3. **Data Processing**:
-    - AWS Glue jobs transform raw data into analyzable format
-    - Processed data stored back in S3 in Parquet format
+```
+% .venv\Scripts\activate.bat
+```
 
-4. **Data Analysis**:
-    - Jupyter Notebook
-    - Results exported to S3 for visualization
+Once the virtualenv is activated, you can install the required dependencies.
 
-5. **Visualization**:
-    - Jupyter Notebooks read data from S3
-    - Creation of insightful plots and charts
+```
+$ pip install -r requirements.txt
+```
 
-## Airflow DAG Structure
+At this point you can now synthesize the CloudFormation template for this code.
 
-```python
-fetch_ebird_data >> upload_to_s3 >> trigger_glue_job >> export_athena_results
+```
+$ cdk synth
+```
+
+To add additional dependencies, for example other CDK libraries, just add
+them to your `setup.py` file and rerun the `pip install -r requirements.txt`
+command.
+
+## Useful commands
+
+ * `cdk ls`          list all stacks in the app
+ * `cdk synth`       emits the synthesized CloudFormation template
+ * `cdk deploy`      deploy this stack to your default AWS account/region
+ * `cdk diff`        compare deployed stack with current state
+ * `cdk docs`        open CDK documentation
+
+Enjoy!

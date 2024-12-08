@@ -1,9 +1,0 @@
-ebird:
-  api_key: 'u42jmap317b8'
-
-aws:
-  s3_bucket: 'your-s3-bucket-name'
-  region: 'us-west-2'
-
-social_media:
-  twitter_api_key: 'your_twitter_api_key'

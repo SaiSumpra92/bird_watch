@@ -1,7 +1,0 @@
-apache-airflow
-boto3
-pandas
-matplotlib
-seaborn
-pyyaml
-requests
