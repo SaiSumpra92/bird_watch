@@ -1,7 +1,7 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from bird_conservation_project.bird_conservation_project_stack import BirdConservationProjectStack
+from bird_conservation_project.bird_conservation_project.bird_conservation_project_stack import BirdConservationProjectStack
 
 # example tests. To run these tests, uncomment this file along with the example
 # resource in bird_conservation_project/bird_conservation_project_stack.py

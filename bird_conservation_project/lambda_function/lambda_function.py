@@ -10,7 +10,7 @@ def get_api_key():
     if 'AWS_EXECUTION_ENV' in os.environ:  # Running in Lambda
         return get_parameter()
     else:  # Local development
-        return os.environ.get('EBIRD_API_KEY')
+        return os.environ.get('EBIRD_API_KEY') or "test_api_key"
 
 def get_parameter():
     ssm = boto3.client('ssm')
@@ -56,7 +56,7 @@ def handler(event, context):
         raw_data = fetch_ebird_data(api_key, region, current_date)
 
         # Process data
-        #processed_data = process_ebird_data(raw_data)
+        processed_data = process_ebird_data(raw_data)
 
         # Upload to S3
         key = f"raw/ebird_data_{current_date}.json"

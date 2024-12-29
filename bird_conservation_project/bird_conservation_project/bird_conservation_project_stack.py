@@ -32,7 +32,7 @@ class BirdConservationProjectStack(Stack):
         etl_lambda = lambda_.Function(self, "ETLFunction",
                                       runtime=lambda_.Runtime.PYTHON_3_8,
                                       handler="lambda_function.handler",
-                                      code=lambda_.Code.from_asset("lambda"),
+                                      code=lambda_.Code.from_asset("lambda_function"),
                                       environment={
                                           "BUCKET_NAME": bucket.bucket_name
                                       }
