@@ -2,6 +2,7 @@ from aws_cdk import (
     Stack,
     aws_s3 as s3,
     aws_lambda as lambda_,
+    Duration,
     RemovalPolicy,
     aws_iam as iam
 )
@@ -30,9 +31,19 @@ class BirdConservationProjectStack(Stack):
 
         # Create Lambda function
         etl_lambda = lambda_.Function(self, "ETLFunction",
-                                      runtime=lambda_.Runtime.PYTHON_3_8,
+                                      runtime=lambda_.Runtime.PYTHON_3_11,
                                       handler="lambda_function.handler",
-                                      code=lambda_.Code.from_asset("lambda_function"),
+                                      code=lambda_.Code.from_asset('lambda_function',  # Changed to 'lambda_function'
+                                                                   bundling={
+                                                                       'image': lambda_.Runtime.PYTHON_3_11.bundling_image,
+                                                                       'command': [
+                                                                           'bash', '-c',
+                                                                           'pip install -r requirements.txt -t /asset-output && cp -au . /asset-output'
+                                                                       ],
+                                                                   }
+                                                                   ),
+                                      timeout=Duration.seconds(900),
+                                      memory_size=512,
                                       environment={
                                           "BUCKET_NAME": bucket.bucket_name
                                       }
