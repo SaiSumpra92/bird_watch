@@ -1,5 +1,5 @@
 
-# Bird Watch Data Pipeline
+## Bird watch Data Pipeline
 
 ## Project Overview
 This project implements a data pipeline for collecting and storing bird observation data using AWS serverless technologies. It fetches recent bird data for a specified region from the eBird API.
@@ -13,10 +13,10 @@ This project implements a data pipeline for collecting and storing bird observat
 - Requests library
 
 ## Project Structure
-
+```plaintext
 bird_conservation_project/
 ├── lambda_function/
-│   ├── __init__.py
+│   ├── init.py
 │   ├── lambda_function.py
 │   └── requirements.txt
 ├── tests/
@@ -26,8 +26,7 @@ bird_conservation_project/
 │   └── bird_conservation_stack.py
 ├── README.md
 └── cdk.json
-
-
+```
 
 ## Features
 - Fetches recent bird observation data for a specified region from eBird API
@@ -38,12 +37,17 @@ bird_conservation_project/
 1. Clone the repository
 2. Install dependencies:
 
+``
 pip install -r requirements.txt
+``
+
 
 3. Configure AWS credentials
 4. Deploy the stack:
 
+``
 cdk deploy
+``
 
 ## How It Works
 1. Lambda function is triggered (currently manual trigger)
@@ -52,6 +56,9 @@ cdk deploy
 
 ## TODO
 - Implement orchestration using Apache Airflow
+- Add data transformation steps
+- Expand data collection to multiple regions
+- Implement error handling and retries
 - Add monitoring and alerting
 
 ## Contributing
@@ -60,6 +67,6 @@ Contributions to this project are welcome. Please fork the repository and submit
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
 
-## Contact 
-Sai Krishna K- [saifeatherweight@gmail.com]
+## Contact
+[Sai K] - [saifeatherweight@gmail.com]
 Project Link: [https://github.com/SaiSumpra92/bird_watch]
