@@ -1,58 +1,65 @@
 
-# Welcome to your CDK Python project!
+# Bird Watch Data Pipeline
 
-This is a blank project for CDK development with Python.
+## Project Overview
+This project implements a data pipeline for collecting and storing bird observation data using AWS serverless technologies. It fetches recent bird data for a specified region from the eBird API.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Technologies Used
+- AWS Lambda
+- Amazon S3
+- AWS CDK (Cloud Development Kit)
+- Python 3.11
+- Boto3
+- Requests library
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+## Project Structure
 
-To manually create a virtualenv on MacOS and Linux:
+bird_conservation_project/
+├── lambda_function/
+│   ├── __init__.py
+│   ├── lambda_function.py
+│   └── requirements.txt
+├── tests/
+│   └── test_lambda_function.py
+├── infrastructure/
+│   ├── app.py
+│   └── bird_conservation_stack.py
+├── README.md
+└── cdk.json
 
-```
-$ python3 -m venv .venv
-```
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
 
-```
-$ source .venv/bin/activate
-```
+## Features
+- Fetches recent bird observation data for a specified region from eBird API
+- Stores data in Amazon S3
+- Infrastructure defined and deployed using AWS CDK
 
-If you are a Windows platform, you would activate the virtualenv like this:
+## Setup and Deployment
+1. Clone the repository
+2. Install dependencies:
 
-```
-% .venv\Scripts\activate.bat
-```
+pip install -r requirements.txt
 
-Once the virtualenv is activated, you can install the required dependencies.
+3. Configure AWS credentials
+4. Deploy the stack:
 
-```
-$ pip install -r requirements.txt
-```
+cdk deploy
 
-At this point you can now synthesize the CloudFormation template for this code.
+## How It Works
+1. Lambda function is triggered (currently manual trigger)
+2. Function fetches recent bird observation data from eBird API for the specified region
+3. Data is stored in an S3 bucket
 
-```
-$ cdk synth
-```
+## TODO
+- Implement orchestration using Apache Airflow
+- Add monitoring and alerting
 
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
+## Contributing
+Contributions to this project are welcome. Please fork the repository and submit a pull request with your proposed changes.
 
-## Useful commands
+## License
+[MIT License](https://opensource.org/licenses/MIT)
 
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+## Contact 
+Sai Krishna K- [saifeatherweight@gmail.com]
+Project Link: [https://github.com/SaiSumpra92/bird_watch]
